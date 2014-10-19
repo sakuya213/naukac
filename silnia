@@ -1,7 +1,7 @@
 int main()
 {
         int a,b,silnia=1;
-        printf("\n Wczytaj cyfre: ");
+        printf("\n Wpisz cyfre: ");
         scanf("%d",&b);
         for(a=1;a<=b;a++)
                 silnia=silnia*a;

@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int main()
+{
+        int a, b;
+		a = 0;
+        printf("\n Wpisz dodatnia liczbe, by poznac jej dzielniki: ");
+        scanf("%d",&b);
+        for(a=1;a<=b;a++)
+		{	
+       if (b % a == 0)
+		printf("\n %d jest dzielnikiem %d ",a,b);
+       }
+        getch();
+        return 0;
+}

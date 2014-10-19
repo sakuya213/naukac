@@ -1,0 +1,15 @@
+#include <stdio.h>
+
+
+ main()
+{
+    int za;
+    for(za=0;za<10;za++)
+ 
+       printf("%d\n",za);
+ 
+
+    getch();
+    return 0;
+
+}

@@ -1,0 +1,11 @@
+int main()
+{
+        int a,b,silnia=1;
+        printf("\n Wczytaj cyfre: ");
+        scanf("%d",&b);
+        for(a=1;a<=b;a++)
+                silnia=silnia*a;
+        printf("\n %d! = %d",b,silnia);
+        getch();
+        return 0;
+}

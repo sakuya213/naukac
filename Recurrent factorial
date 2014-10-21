@@ -1,0 +1,25 @@
+#include<stdio.h>
+
+unsigned long factorial (int k)//Definition of function factorial 
+{
+if(k<=1)
+return(1);
+else
+return(k*factorial(k-1));
+}
+int main()
+{
+int n;
+unsigned long f;
+printf("It serve program of factorial natural number\n");
+scanf("%d",&n);
+printf("You have served  n=%d\n",n);
+if(n<0) printf("You have served negative number, I can not count from negative number factorial !!!\n");
+else
+{
+f=factorial(n);
+printf("Factorial with n=%d there is %d",n,f);
+getch();
+}
+return 0;
+}

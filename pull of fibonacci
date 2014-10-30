@@ -1,0 +1,30 @@
+ #include <stdio.h> 
+  
+ long fib(int); 
+  
+ int main() 
+ { 
+     int n=0; 
+     while(n>=0) 
+     { 
+         printf("It serve which word pull Fibonaccii want to calculate : "); 
+         scanf("%d",&n); 
+         if(n>=0) 
+             printf("This word pull of Fibonaccii it totals %ld\n\n",fib(n)); 
+         else 
+         { 
+             printf("Incorrect number of word serve (Negative)!\n\n"); 
+             n=0; 
+         } 
+     } 
+     return 0; 
+ } 
+  
+ long fib(int n) 
+ { 
+  
+     if ((n==0)||(n==1)) 
+         return n; 
+     else 
+         return (fib(n-1)+fib(n-2)); 
+ } 

@@ -1,0 +1,35 @@
+#include <stdio.h>
+ 
+int main ()
+{
+int f,s,result; // f = first word in operation, s = second (..)
+int unworkable=0; // bravely by zero
+char a;
+printf("It serve operation that want to execute:");
+scanf("%d%c%d",&f,&a,&s);
+switch(a)
+{
+case '+':
+result=f+s;
+break;
+case '-':
+result=f-s;
+break;
+case '*':
+result=f*s;
+break;
+case '/':
+if (s==0)
+{
+printf("Dividing is impossible by zero ");
+unworkable=1;
+} else
+result=f/s;
+break;
+
+}
+if (unworkable==0) printf("Result: %d %c %d = %d\n",f,a,s,result);
+getch();
+
+return 0;
+}

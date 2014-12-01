@@ -1,0 +1,124 @@
+#include <stdio.h>
+#include <string.h>
+
+int solveRPN(char *el)
+{
+    int  stos[256], ws = 0;
+    int  a, b, w, i = 0;
+
+
+    do
+    {
+        if(el[i] >= '0' && el[i] <= '9')
+        {
+            a = 0;
+            b = i;
+            do 
+                a = 10 * a + el[b++] - 48; 
+            while(el[b] >= '0' && el[b] <= '9');
+            stos[ws++] = a;
+            i=b;
+        }
+        else if(el[i] == '=') {
+            return stos[--ws];
+        }
+        else
+        {
+            b = stos[--ws]; a = stos[--ws];
+
+            switch(el[i])
+            {
+                case '+': w = a + b; break;
+                case '-': w = a - b; break;
+                case '*': w = a * b; break;
+                case '/': w = a / b; break;
+                case '^': w = 1;
+                          while(b--) w *= a;
+                          break;
+            }
+
+            stos[ws++] = w;
+        }
+        i++;
+    } while(el[i-1] != '=');
+    return -1;
+} 
+
+char *genRNP(char *el)
+{
+    char stos[256];
+	char *wynik=(char*)malloc(256);
+
+    int ws = 0, i=0, j=0;
+    do
+    {
+
+  if(el[i] >= '0' && el[i] <= '9') 
+  {
+        
+        do {
+            wynik[j]=el[i];
+            j++;
+            i++;
+        }
+        while(el[i] >= '0' && el[i] <= '9');
+        wynik[j]=' ';
+        j++;
+        
+  }
+        else
+            switch(el[i])
+            {
+                case '+': ;
+                case '-': while(ws && stos[ws - 1] != '(' ) 
+                            {wynik[j]=stos[--ws];j++;}
+                          stos[ws++] = el[i];
+                          break;
+                case '*': ;
+                case '/': while(ws && stos[ws - 1] != '(' &&
+                                      stos[ws - 1] != '+' &&
+                                      stos[ws - 1] != '-') {wynik[j]=stos[--ws];j++;}
+                          stos[ws++] = el[i];
+                          break;  
+                case '^': while(ws && stos[ws - 1] == '^') {wynik[j]=stos[--ws];j++;}
+                          stos[ws++] = el[i];
+                          break;
+                case '(': stos[ws++] = '(';
+                          break;
+                case ')': while(stos[ws - 1] != '(' ) {wynik[j]=stos[--ws];j++;}
+                          ws--;
+                          break;
+                case '=': while(ws) {wynik[j]=stos[--ws];j++;}
+                          wynik[j]= '=';
+                          j++;
+						  wynik[j]='\0';
+						  j++;
+                          break;
+            }
+        ++i;
+    } while(el[i-1] != '=');
+    
+    
+    
+    return wynik;
+}
+
+
+
+
+int main(){
+    char *Norm=0;
+	char take[256+1];
+	char *test;
+    Norm = gets(take);
+
+	if (Norm) {
+		test=genRNP(Norm);
+		printf("%s\n",test);
+		printf("%d\n",solveRPN(test));
+		getchar();
+		if (test) 
+			free(test);
+	}
+return 0;    
+}

@@ -1,0 +1,17 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    unsigned int a,b;
+
+    cin >> a;
+    b = 1;
+
+    do cout << b++ << " "; while(b <= a); //wyswietla liczby od 1 do a
+
+    cout << endl;
+	system("pause");
+    return 0;
+} 

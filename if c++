@@ -1,0 +1,16 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int a,b;
+
+    cin >> a >> b;
+    if(a > b) cout << "Pierwsza liczba jest wieksza";
+    else      cout << "Druga liczba jest wieksza";
+    cout << endl;  
+	system("pause");
+
+    return 0;
+}

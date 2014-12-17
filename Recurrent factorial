@@ -1,9 +1,9 @@
 #include<stdio.h>
-
+// where is styling of this file? this look horible
 unsigned long factorial (int k)//Definition of function factorial 
 {
 if(k<=1)
-return(1);
+return(1); // that is wrong - check http://pl.wikipedia.org/wiki/Ci%C4%85g_Fibonacciego - for 0 it will be 0, not 1
 else
 return(k*factorial(k-1));
 }

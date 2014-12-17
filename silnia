@@ -1,9 +1,10 @@
 int main()
 {
         int a,b,silnia=1;
-        printf("\n Wpisz cyfre: ");
-        scanf("%d",&b);
-        for(a=1;a<=b;a++)
+        printf("\n Wpisz cyfre: "); // in english 
+        scanf("%d",&b); // what when you write normal chart? no need to check?
+        // second - check http://pl.wikipedia.org/wiki/Silnia - you can set only natural numbers
+        for(a=1;a<=b;a++) // always {}
                 silnia=silnia*a;
         printf("\n %d! = %d",b,silnia);
         getch();

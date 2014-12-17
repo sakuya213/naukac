@@ -3,8 +3,8 @@
 
  main()
 {
-    int za;
-    for(za=0;za<10;za++)
+    int za; // what is this?
+    for(za=0;za<10;za++) // always use {}
  
        printf("%d\n",za);
  

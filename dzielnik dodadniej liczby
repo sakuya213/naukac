@@ -5,11 +5,15 @@ int main()
         int a, b;
 		a = 0;
         printf("\n Wpisz dodatnia liczbe, by poznac jej dzielniki: ");
+        // As we talked - everything in english - text too. File name to.
+        // program will crash when you set instead of number, a other chart?
+        
         scanf("%d",&b);
         for(a=1;a<=b;a++)
+         // read about standards - this one document for start - http://www.php-fig.org/psr/psr-1/
 		{	
-       if (b % a == 0)
-		printf("\n %d jest dzielnikiem %d ",a,b);
+       if (b % a == 0) // always use {} - on 1 line code too
+		printf("\n %d jest dzielnikiem %d ",a,b);  // comment in english
        }
         getch();
         return 0;

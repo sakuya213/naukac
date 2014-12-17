@@ -2,7 +2,7 @@
 
 main()
 {
-    int za;
+    int za; // what is this? - "za" it nothing tell about. Maybe counter? 
 za=0;
 do   
 {
@@ -14,3 +14,5 @@ while(za<=10);
 getch();
 return 0;
 }
+
+// always code style problem - as earlier for start PSR-1 you need to read

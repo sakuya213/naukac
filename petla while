@@ -2,9 +2,9 @@
 
 main()
 {
-    int za;
+    int za; //what is this? za?
 za=0;
-while(za<=10)
+while(za<=10) 
 {
 printf("%d\n",za);
 za++;
@@ -13,3 +13,6 @@ za++;
 getch();
 return 0;
 }
+
+
+// code style
